@@ -1,6 +1,6 @@
 # vocabify-app
 
-## Langkah-Langkah Menjalankan Proyek
+### How to Run
 
 1. **Clone Repository**
    - Buka terminal dan clone repository menggunakan perintah berikut:
