@@ -1,0 +1,152 @@
+/* Variables */
+:root {
+    --primary-color: #4A628A;
+    --hover-color: #3b4e6d;
+    --text-color: black;
+    --soft-text-color: #6a7b83;
+    --secondary-color: #1A1A1A;
+    --background-gradient: linear-gradient(to bottom right, #f8fffe, #ffffff);
+    --text-soft-color: #666666;
+    --font-family: Arial, sans-serif;
+}
+
+/* General page background */
+body {
+    background: var(--background-gradient);
+    font-family: var(--font-family);
+    margin: 0;
+}
+
+/* Navbar styling */
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: #ffffff;
+    font-family: var(--font-family);
+}
+
+.navbar-title {
+    margin-right: auto;
+    font-size: 2em;
+    color: var(--primary-color);
+    font-weight: bold;
+    cursor: default;
+}
+
+.navbar-links {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+    list-style: none; /* Remove the default bullet points */
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margin */
+}
+
+.navbar-links a {
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: var(--text-color);
+    transition: color 0.3s;
+}
+
+.navbar-links a:hover {
+    color: var(--primary-color);
+}
+
+.logout-button {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1em;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.logout-button:hover {
+    background-color: var(--hover-color);
+}
+
+/* Memorify section styling */
+.memorify-section {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.heading {
+    font-size: 3em;
+    color: var(--secondary-color);
+    font-weight: bold;
+    margin-bottom: 20px;
+    line-height: 1.2;
+    text-align: center;
+}
+
+.description {
+    font-size: 1.2em;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+.memory-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Creates 4 columns */
+    gap: 20px; /* Adjusts the spacing between the cards */
+    justify-content: center;
+    max-width: 800px; /* You can adjust the maximum width as needed */
+    margin: 0 auto;
+}
+
+.memory-card {
+    background-color: #4A628A;
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2em;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: background-color 0.3s;
+    height: 100px; /* Adjust as needed */
+    width: 150px; /* Adjust as needed */
+    text-align: center;
+}
+
+.memory-card.flipped {
+    background-color: #ffffff;
+    color: #4A628A;
+}
+
+.memory-feedback {
+    font-size: 1.2em;
+    color: #4A628A;
+    margin-top: 20px;
+}
+
+.button {
+    padding: 10px 20px;
+    background-color: #0071c2;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.button:hover {
+    background-color: #005a99;
+}
+
+/* Footer styling */
+.footer-paragraph {
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9em;
+    color: #888;
+}

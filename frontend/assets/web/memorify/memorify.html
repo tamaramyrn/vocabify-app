@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memorify</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <!-- Navbar -->
+    <header>
+        <nav class="navbar">
+            <h1 class="navbar-title">Vocabify</h1>
+            <ul class="navbar-links">
+                <li><a href="../../../main.html">Home</a></li>
+                <li><a href="../scrambify/scrambify.html">Scrambify</a></li>
+                <li><a href="memorify.html">Memorify</a></li>
+                <li><a href="#" id="logout-button" class="logout-button">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Memorify Section -->
+    <section id="memorify-section" class="memorify-section">
+        <h2 class="heading">Memorify</h2>
+        <p class="description">Match the words with their definitions!</p>
+        <div id="memory-game" class="memory-grid"></div>
+        <div id="memory-feedback" class="memory-feedback"></div>
+        <button class="button" onclick="resetMemoryGame()">Reset Game</button>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p class="footer-paragraph">© 2024 Vocabify. All rights reserved.</p>
+    </footer>
+
+    <!-- Skrip Logout -->
+    <script>
+        document.getElementById('logout-button').addEventListener('click', (event) => {
+            event.preventDefault(); // Mencegah reload halaman
+            localStorage.removeItem('token'); // Menghapus token dari localStorage
+            window.location.href = '../../../auth/login.html'; // Arahkan kembali ke halaman login
+        });
+    </script>
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>

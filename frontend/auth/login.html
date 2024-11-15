@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Vocabify</title>
+    <!-- Path to external styles and fonts -->
+    <link rel="stylesheet" href="auth-styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap" rel="stylesheet">
+</head>
+<body class="main-background">
+    <!-- Wrapper for text and login box -->
+    <div class="auth-wrapper">
+        <h1 class="welcome-text">Welcome to Vocabify!</h1>
+        <div class="auth-container auth-box-style">
+            <h2>Login to Your Account</h2>
+            <form id="login-form">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required>
+                
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+                
+                <button type="submit" class="cta-button">Login</button>
+            </form>
+            <p>Don't have an account? <a href="../index.html">Register here</a></p>
+        </div>
+    </div>
+    
+    <script>
+document.getElementById('login-form').addEventListener('submit', async (event) => {
+    event.preventDefault();
+
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+
+    try {
+        const response = await fetch('http://localhost:7777/api/auth/login', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ username, password }),
+        });
+
+        if (response.ok) {
+            const data = await response.json();
+            localStorage.setItem('token', data.token); // Store token in localStorage
+            localStorage.setItem('username', username); // Simpan username
+            alert('Login successful!');
+            window.location.href = '../main.html'; // Redirect to main page after login
+        } else {
+            const errorData = await response.json();
+            alert(errorData.error || 'Login failed. Please try again.');
+        }
+    } catch (error) {
+        console.error('Error:', error);
+        alert('An error occurred. Please try again.');
+    }
+});
+    </script>
+</body>
+</html>

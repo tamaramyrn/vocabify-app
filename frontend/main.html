@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Vocabify - Level Up Your English Skills">
+    <title>Vocabify</title>
+    <!-- Link to CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Link to Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Script untuk cek token dan mengarahkan ke login jika tidak ada token -->
+    <script>
+        if (!localStorage.getItem('token')) {
+            window.location.href = 'auth/login.html';
+        }
+    </script>
+
+    <!-- Navbar -->
+    <header>
+        <nav class="navbar">
+            <h1 class="navbar-title">Vocabify</h1>
+            <ul class="navbar-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="assets/web/scrambify/scrambify.html">Scrambify</a></li>
+                <li><a href="assets/web/memorify/memorify.html">Memorify</a></li>
+                <li><a href="#" id="logout-button" class="logout-button">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Home Section -->
+    <main id="home">
+        <div class="home-container">
+            <div class="home-intro">
+                <h1 class="home-heading">
+                    Level Up Your<br>
+                    <span class="blue-text">English Skills</span>
+                </h1>
+                <p class="home-subheading">Discover new vocabulary to broaden your horizons.</p>
+                <button class="home-button" onclick="scrollToServices()">Get Started</button>
+            </div>
+            <div class="home-intro-image">
+                <img src="./assets/img/Home.png" alt="Education Illustration" class="home-image">
+            </div>
+        </div>
+    </main>
+
+    <!-- Services Section -->
+    <section id="services" class="home-services">
+        <h2 class="home-services-heading">Our Services</h2>
+        <p class="home-services-description">Fostering a playful & engaging learning environment</p>
+        <div class="home-card-container">
+            <div class="home-card">
+                <h3 class="home-card-title">Scrambify</h3>
+                <p class="home-card-text">
+                    Enhance your English skills by rearranging scrambled letters into words.
+                </p>
+                <a href="assets/web/scrambify/scrambify.html" class="home-learn-more">Learn More <span class="arrow">→</span></a>
+            </div>
+            <div class="home-card">
+                <h3 class="home-card-title">Memorify</h3>
+                <p class="home-card-text">
+                    Enhance your English skills by playing memory cards.
+                </p>
+                <a href="assets/web/memorify/memorify.html" class="home-learn-more">Learn More <span class="arrow">→</span></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p class="footer-paragraph">© 2024 Vocabify. All rights reserved.</p>
+    </footer>
+
+    <!-- Skrip Logout -->
+    <script>
+        document.getElementById('logout-button').addEventListener('click', (event) => {
+            event.preventDefault(); // Mencegah reload halaman
+            localStorage.removeItem('token'); // Menghapus token dari localStorage
+            window.location.href = 'auth/login.html'; // Arahkan kembali ke halaman login
+        });
+    </script>
+    <!-- Link to Javascript -->
+    <script src="script.js"></script>
+</body>
+</html>
